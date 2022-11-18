@@ -3,23 +3,21 @@ import './Login.css'
 
 const Login = () => {
     return (
-        <div className='login-form'>
+        <div className='login-container'>
             <form>
                 <span className="login-head">Login</span>
-                <div className="form-login">
+                <div className="form-login center">
                     <input type='text' placeholder='Username' />
                 </div>
-                <div className="form-login">
-                    <input type='text' placeholder='Password' />
+                <div className="form-login center">
+                    <input type='password' placeholder='Password' />
                 </div>
-                <div>
+                <div className="login-checkbox">
                     <label className="checkbox">
-                        <input type="checkbox" />
-                        Remember me
-                    </label>
+                        <input type="checkbox" />Remember me</label>
                 </div>
-                <div className="login-button">
-                    <button>Login</button>
+                <div className="login-button center">
+                    <button type="submit">Login</button>
                 </div>
             </form>
         </div>
