@@ -15,10 +15,7 @@ const Register = () => {
                     <input type="password" placeholder="Password" /><br />
                     <input type="password" placeholder="Confirm-Password" />
                 </div>
-                <div className="register-checkbox">
-                    <label className="checkbox"><br />
-                    <input type="checkbox" />I agree with the terms and conditions and the Privacy Policy</label>
-                </div>
+             
                 <div className="register-button center">
                     <button type="submit">Create Account</button>
                 </div>
