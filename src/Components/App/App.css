@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+
+input {
+  border: none;
+  padding: 5px;
+  /* outline: none; */
+}
+input:focus{
+  border: none;
+
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
