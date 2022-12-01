@@ -1,0 +1,10 @@
+.chart-data {
+    font-family: sans-serif;
+    text-align: center;
+    max-height: 500px;
+    margin-top: 64px;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0;
+  }
+  
