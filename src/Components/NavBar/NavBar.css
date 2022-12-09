@@ -1,7 +1,7 @@
 
 .navbar-container {
     background-color: rgb(195, 108, 108);
-    overflow: hidden;
+    /* overflow: hidden; */
     display: flex;
     flex-direction: row;
     max-width: 100%;
@@ -9,6 +9,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 5px;
+    position: fixed;
+
   }
   
   .navbar-left {

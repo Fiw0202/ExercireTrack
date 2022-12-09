@@ -1,14 +1,17 @@
-import logo from '../../logo.svg';
+import React from 'react';
 import './App.css';
+import Login from '../Login/Login'
+import Register from '../Register/Register'
+import NavBar from '../NavBar/NavBar'
+import Piechart from '../Piechart/Piechart'
 
-import Piechart from "../Piechart/Piechart";
 function App() {
   return (
-    <div className="App">
-      <Login />
-      <Register />
-      <Piechart />
-      <NavBar />
+    <div className="App-main">
+    <NavBar />
+    <Login />
+    <Register />   
+    <Piechart />
     </div>
   );
 }

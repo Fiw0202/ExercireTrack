@@ -1,12 +1,14 @@
-.App {
-  text-align: center;
+
+.App-main {
+  display: flex;
+  flex-direction: column;
 }
 
-
+/* 
 input {
   border: none;
   padding: 5px;
-  /* outline: none; */
+  outline: none;
 }
 input:focus{
   border: none;
@@ -45,4 +47,4 @@ input:focus{
   to {
     transform: rotate(360deg);
   }
-}
+} */
