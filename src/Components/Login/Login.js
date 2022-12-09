@@ -1,3 +1,4 @@
+import React from "react";
 import "./Login.css";
 
 const Login = () => {
@@ -6,10 +7,10 @@ const Login = () => {
       <form>
         <span className="login-head">Login</span>
         <div className="form-login center">
-          <input type="text" placeholder="Username" />
+          <input type="email" placeholder="Username" required/>
         </div>
         <div className="form-login center">
-          <input type="password" placeholder="Password" />
+          <input type="password" placeholder="Password" required/>
         </div>
         <div className="login-button center">
           <button type="submit">Login</button>
