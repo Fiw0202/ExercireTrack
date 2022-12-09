@@ -14,12 +14,18 @@
   .navbar-left {
     display: flex;
     flex-direction: row;
+    align-items: center;
   }
 
   .navbar-logo {
     padding-right: 10px;
   }
 
+  .navbar-logo > img{
+    border-radius: 50%;
+    width: 40px;
+    
+  }
   .navbar-left > span{
     padding-right: 10px;
   }
@@ -28,3 +34,15 @@
     padding-right: 10px;
   }
 
+  .profile-img > img {
+    width: 40px;
+    border-radius: 50%;
+    height: 40px;
+  }
+
+  @media screen and (max-width: 300px) {
+    .navbar-logo > img{
+        display: none;    
+      }
+
+    }
