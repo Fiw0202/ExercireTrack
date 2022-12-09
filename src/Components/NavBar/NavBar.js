@@ -1,25 +1,28 @@
 import React from "react";
+import "./NavBar.css";
 
 function NavBar() {
   return (
     <div className="navbar-container">
-    <div className="navbar-left">
+      <div className="navbar-left">
         <div className="navbar-logo">
-        <img
-            src="ExercireTrack\src\Components\image\IMG_5214.jpg"
+          <img
+            src="../image/famslogo.PNG"
             alt="fams-logo"
-        />
+          />
         </div>
-        <div className="navbar-text">
-        <p>FAMS</p>
-        <a href="#">Home</a>
-        <a href="#">News</a>
-        </div>  
-    </div>
-
-    <div className="navbar-right">
         
-    </div>
+          <span>FAMS</span>
+          <a href="./#">Home</a>
+          <a href="./#">News</a>
+       
+      </div>
+
+      <div className="navbar-right">
+        <div className="profile-img">
+          <img src="../image/IMG_3014.jpg" alt="profile-img" />
+        </div>
+      </div>
     </div>
   );
 }
