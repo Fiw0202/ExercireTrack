@@ -1,16 +1,16 @@
-
-import Register from '../Register/Register';
-import Login from '../Login/Login'
+import logo from '../../logo.svg';
 import './App.css';
-import Piechart from '../Piechart/Piechart';
+
+import Piechart from "../Piechart/Piechart";
 function App() {
   return (
     <div className="App">
-      <Login /> 
+      <Login />
       <Register />
-      <Piechart/>
+      <Piechart />
+      <NavBar />
     </div>
   );
 }
 
-export default App
+export default App;
