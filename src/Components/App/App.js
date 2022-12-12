@@ -1,4 +1,3 @@
-
 import "./App.css";
 import Piechart from "../Piechart/Piechart";
 import MyProfile from "../MyProfile/MyProfile";
