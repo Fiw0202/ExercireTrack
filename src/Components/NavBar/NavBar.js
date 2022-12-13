@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from 'react-router-dom'
 import "./NavBar.css";
 
 
@@ -13,9 +14,9 @@ function NavBar() {
           />
         </div>
         
-          <span>FAMS</span>
-          <a href="./#">Home</a>
-          <a href="./#">News</a>
+          <Link to="/">FAMS</Link>
+          <Link to="/overview">Home</Link>
+          <Link to="/register">News</Link>
        
       </div>
 
