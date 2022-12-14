@@ -1,0 +1,54 @@
+h1 {
+  font-weight: 900;
+  font-size: 32px;
+  margin: 40px;
+}
+.newex-form {
+  display: flex;
+  justify-content: center;
+}
+.section-form {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  margin-right: 30px;
+}
+input {
+  width: 150px;
+  background-color: rgb(206, 206, 206);
+}
+input:focus {
+  outline: none;
+}
+p {
+  font-size: 24px;
+  font-weight: 600;
+}
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(0, 0, 0);
+  opacity: 0.5; /* Firefox */
+}
+.input-action {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-direction: column;
+}
+.btn-save {
+  background-color: rgb(57, 55, 55);
+  color: white;
+  font-size: 16px;
+  border-radius: 5px;
+  width: 20%;
+  padding: 8px;
+  margin: 24px 0;
+  transition: 0.8s;
+}
+.btn-save:hover{
+    color: rgb(57, 55, 55);
+    background-color: white;
+    cursor: pointer;
+    transition: 0.8s;
+  }
