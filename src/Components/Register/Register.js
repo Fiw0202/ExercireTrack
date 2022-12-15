@@ -1,7 +1,10 @@
 import "./Register.css";
 import React, { useEffect, useState } from "react";
+import { baseUrl } from "../../store";
+import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
+  const navigate = useNavigate();
   //record data
   const [formField, setFormField] = useState({});
 
@@ -29,7 +32,6 @@ const Register = () => {
     } else {
       isPass = validateInputString(value);
     }
-    console.log("isPass", isPass);
     if (isPass) {
       setAlertField({ ...alertField, [fieldName]: "pass" });
       setFormField({ ...formField, [fieldName]: value });
@@ -62,14 +64,47 @@ const Register = () => {
     } else return true;
   };
 
-  function createAccount(e) {
-    if (!validData) {
-      return;
+  const requestPost = async (url, body) => {
+    const settings = {
+      method: "POST",
+      body: JSON.stringify(body),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+    };
+    try {
+      const fetchResponse = await fetch(url, settings);
+      const data = await fetchResponse.json();
+      
+      return data;
+    } catch (error) {
+      return error;
     }
-    console.log("click create acc");
+  };
+  async function createAccount(e) {
+    if (!validData) {
+      return alert("Invalid data.");
+    }
+    const data = {
+      email: formField.email,
+      password: formField.password,
+      firstname: formField.firstname,
+      lastname: formField.lastname,
+    };
+    console.log("click create acc", data);
 
-    // password must equal confirm password
+    const url = `${baseUrl}user/register`;
+    
+    const res = await requestPost(url, data);
+    if (res.status===201 && res.result==="complete") {
+      alert('Register complete')
+      navigate('/')
+    }else if (res.status===400) {
+      alert(`${res.name} error:${res.error}`)
+    }
 
+    // console.log("res", res);
     // send data to backend
   }
 
@@ -88,15 +123,15 @@ const Register = () => {
 
     const match = matchPassword;
     setValidData(match);
-    console.log("formField", formField);
-    console.log("validData", validData);
+    // console.log("formField", formField);
+    // console.log("validData", validData);
   }, [formField, validData, alertField]);
 
   return (
     <div className="register-container">
-      <form className="register-form">
-        <span className="register-head">Register</span>
-        <div className="register-form center">
+      <div className="register-form-container">
+      <div className="register-form center">
+      <span className="register-head">Register</span>
           <input
             className={alertField.firstname}
             type="text"
@@ -143,11 +178,11 @@ const Register = () => {
             minLength={8}
             required
           />
+          <button className="btn-submit" onClick={createAccount}>
+            Create Account
+          </button>
         </div>
-        <button type="submit" className="btn-submit" onClick={createAccount}>
-          Create Account
-        </button>
-      </form>
+      </div>
     </div>
   );
 };

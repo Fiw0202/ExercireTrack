@@ -1,5 +1,12 @@
 :root{
   font-size: 10px;
+  background:  linear-gradient(145deg,  #C1C8E4, #5AB8EB, #84CEEB, #5580E9, rgb(136,96,208));
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  background-attachment: fixed;
+  background-size: cover;
+
+
 }
 
 body {
