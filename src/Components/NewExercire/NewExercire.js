@@ -1,6 +1,7 @@
 import "./NewExercire.css";
-const NewExercire = () => {
+const NewExercise = () => {
   return (
+
     <div className="add-excerice">
       <h1>New Exercire</h1>
       <div className="newex-form">
@@ -13,7 +14,14 @@ const NewExercire = () => {
           <p>Calories Burned</p>
         </div>
         <div className="input-action">
-          <input type="text" placeholder="Activity"></input>
+        <select>
+              <option value=""></option>
+              <option value="run">Run</option>
+              <option value="bicycleride">Bicycle Ride</option>
+              <option value="swimming">Swimming</option>
+              <option value="walk">Walk</option>
+              <option value="hiking">Hiking</option>
+            </select>
           <input type="date"></input>
           <input type="time" placeholder="Activity"></input>
           <input type="text" placeholder="Optional"></input>
@@ -26,4 +34,4 @@ const NewExercire = () => {
   );
 };
 
-export default NewExercire;
+export default NewExercise;
