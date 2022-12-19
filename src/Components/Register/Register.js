@@ -1,6 +1,6 @@
 import "./Register.css";
 import React, { useEffect, useState } from "react";
-import { baseUrl } from "../../store";
+import { baseUrl, getRequestOption, sendRequest } from "../../store";
 import { useNavigate } from 'react-router-dom';
 
 const Register = () => {
@@ -64,24 +64,6 @@ const Register = () => {
     } else return true;
   };
 
-  const requestPost = async (url, body) => {
-    const settings = {
-      method: "POST",
-      body: JSON.stringify(body),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-    };
-    try {
-      const fetchResponse = await fetch(url, settings);
-      const data = await fetchResponse.json();
-      
-      return data;
-    } catch (error) {
-      return error;
-    }
-  };
   async function createAccount(e) {
     if (!validData) {
       return alert("Invalid data.");
@@ -95,8 +77,8 @@ const Register = () => {
     console.log("click create acc", data);
 
     const url = `${baseUrl}user/register`;
-    
-    const res = await requestPost(url, data);
+    const settings = getRequestOption('POST', data, '')
+    const res = await sendRequest(url, settings)
     if (res.status===201 && res.result==="complete") {
       alert('Register complete')
       navigate('/')
@@ -125,7 +107,7 @@ const Register = () => {
     setValidData(match);
     // console.log("formField", formField);
     // console.log("validData", validData);
-  }, [formField, validData, alertField]);
+  }, [formField, validData, alertField, matchPassword]);
 
   return (
     <div className="register-container">
