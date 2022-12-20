@@ -13,7 +13,7 @@ function App() {
 
   return (
     <div className="App-main" >
-      <NavBar token={token}/>
+      <NavBar token={token} setToken={setToken}/> 
     
       <Routes>
         <Route path="/" exact element={<Login setToken={setToken}/>}></Route>

@@ -1,8 +1,10 @@
 import { React, useState, useEffect } from "react";
 import { baseUrl, getRequestOption, sendRequest } from "../../store";
 import "./MyProfile.css";
+import { useNavigate } from 'react-router-dom'
 
 export default function ProfilePage({ token }) {
+  const navigate = useNavigate()
   const [response, setRes] = useState({});
   const [formValues, setFormValues] = useState({
     firstname: "",
@@ -15,6 +17,11 @@ export default function ProfilePage({ token }) {
     email: "",
   });
   const [bmi, setBmi] = useState(0);
+  useEffect(()=>{
+    if (!token) {
+      navigate('/')
+    }
+  }, [token])
   useEffect(() => {
     getProfileDetail().then((res) => {
       setRes(res);

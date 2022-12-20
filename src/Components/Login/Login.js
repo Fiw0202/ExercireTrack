@@ -41,10 +41,15 @@ const Login = ({ setToken }) => {
       alert("invalid password");
       return;
     }
+    
+
+    // prepare data to send request to backend
     const data = {
       email: loginField.email,
       password: loginField.password,
     };
+
+    // path backend
     const url = `${baseUrl}user/login`;
     const settings = getRequestOption("POST", data, "");
     const res = await sendRequest(url, settings);
@@ -52,10 +57,10 @@ const Login = ({ setToken }) => {
     checkLogin(res)
   };
 
-  function checkLogin(data) {
-    if (data.result === "login complete") {
-      const JWTtoken = data.token;
-      console.log("JWTtoken", JWTtoken);
+  function checkLogin(res) {
+    if (res.result === "login complete") {
+      const JWTtoken = res.token;
+      // console.log("JWTtoken", JWTtoken);
       if (JWTtoken) {
         localStorage.setItem("token", JWTtoken);
         setToken(JWTtoken);
@@ -64,8 +69,8 @@ const Login = ({ setToken }) => {
       // Navigate to the home page
       navigate("/overview");
     } else {
-      console.log("caanot login");
-      alert(data.error);
+      // console.log("caanot login");
+      alert(res.error);
     }
   }
   useEffect(() => {
@@ -79,7 +84,7 @@ const Login = ({ setToken }) => {
     }
     localStorage.removeItem("token");
 
-    console.log("validData", validData);
+    // console.log("validData", validData);
   }, [loginField, validData]);
 
   return (
