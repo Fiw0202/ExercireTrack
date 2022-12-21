@@ -1,11 +1,21 @@
+.add-exercise{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
 h1 {
   font-weight: 900;
   font-size: 32px;
   margin: 40px;
+  text-align: center;
 }
 .newex-form {
   display: flex;
   justify-content: center;
+  flex-direction: row;
+  width: 500px;
+  padding: 30px;
+  margin: 40px;
 }
 .section-form {
   display: flex;
@@ -13,12 +23,23 @@ h1 {
   flex-direction: column;
   gap: 2rem;
   margin-right: 30px;
+  width: 100%;
+
 }
 input {
   width: 150px;
   background-color: rgb(206, 206, 206);
 }
 input:focus {
+  outline: none;
+}
+select{
+  background-color: rgb(206, 206, 206);
+  padding: 14px ;
+  border-radius: 4px;
+  border: none;
+}
+select:focus {
   outline: none;
 }
 p {
@@ -32,9 +53,12 @@ p {
 }
 .input-action {
   display: flex;
-  gap: 1rem;
+  gap: 2rem;
   justify-content: center;
   flex-direction: column;
+}
+.input-action input{
+  text-align: center;
 }
 .btn-save {
   background-color: rgb(57, 55, 55);
@@ -43,7 +67,7 @@ p {
   border-radius: 5px;
   width: 20%;
   padding: 8px;
-  margin: 24px 0;
+  margin-left: 20px;
   transition: 0.8s;
 }
 .btn-save:hover{

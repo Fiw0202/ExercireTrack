@@ -1,0 +1,201 @@
+.Running{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 270px;
+  width: 270px;
+  background-color: aquamarine;
+  border-radius: 12px;
+  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.Running li{
+  list-style-type: none;
+}
+.Running:hover{
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+.Running h3 {
+  font-size: 26px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.23);
+  font-weight: 900;
+}
+
+.Walking{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 270px;
+  width: 270px;
+  background-color: rgb(155, 127, 255);
+  border-radius: 12px;
+  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.Walking li{
+  list-style-type: none;
+}
+.Walking:hover{
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+.Walking h3 {
+  font-size: 26px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.23);
+  font-weight: 900;
+}
+
+.Bicycling{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 270px;
+  width: 270px;
+  background-color: rgb(255, 173, 118);
+  border-radius: 12px;
+  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.Bicycling li{
+  list-style-type: none;
+}
+.Bicycling:hover{
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+.Bicycling h3 {
+  font-size: 26px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.23);
+  font-weight: 900;
+}
+
+.Swimming{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 270px;
+  width: 270px;
+  background-color: rgb(255, 118, 186);
+  border-radius: 12px;
+  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.Swimming li{
+  list-style-type: none;
+}
+.Swimming:hover{
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+.Swimming h3 {
+  font-size: 26px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.23);
+  font-weight: 900;
+}
+
+.Hiking{
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 270px;
+  width: 270px;
+  background-color: rgb(235, 245, 93);
+  border-radius: 12px;
+  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.Hiking li{
+  list-style-type: none;
+}
+.Hiking:hover{
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+.Hiking h3 {
+  font-size: 26px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.23);
+  font-weight: 900;
+}
+
+.activity-items {
+  text-align: center;
+  font-size: 16px;
+  padding: 10px;
+  margin: 10px;
+  max-width: 270px;
+  width: 270px;
+  background-color: aquamarine;
+  border-radius: 12px;
+  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+.activity-items li {
+  list-style-type: none;
+}
+.activity-items:hover{
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+.activity-items h3 {
+  font-size: 26px;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.23);
+  font-weight: 900;
+}
+.activity-list {
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 5px;
+}
+.ul-right li{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  font-weight: 600;
+}
+.ul-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.ul-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.update-btn {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin: 5px;
+}
+.update-btn p {
+  font-size: 12px;
+  color: white;
+}
+.update-btn p:first-child{
+  background-color: red;
+  width: 40px;
+  padding: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.update-btn :hover{
+  transition: 0.3s;
+  transform: scale(1.04);
+}
+.update-btn p:nth-child(2){
+  background-color: green;
+  width: 40px;
+  padding: 3px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: 0.3s;
+}
