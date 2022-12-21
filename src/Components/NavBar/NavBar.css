@@ -1,0 +1,90 @@
+
+.navbar-container {
+    background-color: #5580E9;
+    /* overflow: hidden; */
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 4rem;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    /* position: fixed; */
+    font-size: 1.5rem;
+    box-shadow: 5px 5px 5px #4261ae;
+  }
+
+  
+  
+  .navbar-left {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .navbar-logo {
+    padding-right: 1rem;
+  }
+
+  .navbar-logo > img{
+    border-radius: 50%;
+    width: 4rem;
+    
+  }
+  .navbar-left > span{
+    padding-right: 2rem;
+  }
+
+  /* .navbar-left > a{
+    padding-right: 1rem;
+  } */
+
+  .profile-img  {
+    width: 4rem;
+    border-radius: 50%;
+    height: 4rem;
+    margin: 0 1rem;
+  }
+
+  .navbar-right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* .switch-link > a {
+    margin: 0 0.5rem;
+  } */
+  .profile-picture-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .logoutButton {
+    cursor: pointer;
+    margin-right: 2rem;
+    transition: all .2s ease-in;
+  }
+  .logoutButton:hover {
+    font-size: 2rem;
+  }
+
+  .profile-btn {
+      text-decoration: none;
+      color: black;
+      cursor: pointer;
+      margin-right: 2rem;
+      transition: all .2s ease-in;
+
+    }
+    .profile-btn:hover {
+      font-size: 2rem;
+    }
+  
+  @media screen and (max-width: 300px) {
+    .navbar-logo > img{
+        display: none;    
+      }
+
+    }

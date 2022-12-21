@@ -1,14 +1,18 @@
-import "./App.css";
-import Piechart from "../Piechart/Piechart";
-import MyProfile from "../MyProfile/MyProfile";
-import Register from "../Register/Register";
-import Login from "../Login/Login";
+import {React, useState} from 'react';
+import './App.css';
+import Login from '../Login/Login'
+import Register from '../Register/Register'
+import NavBar from '../NavBar/NavBar'
+import Piechart from '../Piechart/Piechart'
+import MyProfile from '../MyProfile/MyProfile'
 import NewExercire from "../NewExercire/NewExercire";
 import ActivitySum from "../ActivitySum/ActivitySum";
-import { useState } from "react";
 import ActivityContext from "../../Data/ActivityContext";
+import { Routes , Route } from 'react-router-dom';
+
 
 function App() {
+
   //MockUP Data
   const data = [
     {
@@ -64,20 +68,28 @@ function App() {
       return [newActivity, ...prevCard];
     });
   };
+  
+  const [token, setToken] = useState('');
 
   return (
-    <div className="App">
-      <ActivityContext.Provider value={"ActivityContext"}>
-        <ActivitySum cards={item} />
+
+    <div className="App-main" >
+      <NavBar token={token} setToken={setToken}/> 
+    
+      <Routes>
+     
+        <Route path="/" exact element={<Login setToken={setToken}/>}></Route>
+        <Route path="/register" element={<Register />}></Route>
+        <Route path="/overview" element={<Piechart token={token}/>}></Route>
+        <Route path="/profile" element={<MyProfile token={token}/>}></Route>
+        <ActivityContext.Provider value={"ActivityContext"}>
+        <Route path="/activitycard" element={<ActivitySum cards={item} token={token}/>}></Route>
         <NewExercire onAddActivity={onAddNewActivity} />
-      </ActivityContext.Provider>
-
-      {/*<MyProfile/>*/}
-
-      <Login />
-      <Register />
-      <Piechart />
+        </ActivityContext.Provider>
+      
+      </Routes>
     </div>
   );
 }
+
 export default App;

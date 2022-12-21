@@ -13,7 +13,7 @@
 }
 
 form {
-    background-color: rgb(232, 232, 232);
+    background-color: rgb(132,206,235);
     width: 30%;
     height: 50%;
     padding: 24px;
@@ -22,9 +22,9 @@ form {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
+    box-shadow: 5px 5px 5px #4261ae;
 }
-
+ 
 .login-head {
     font-size: 2.4rem;
     padding: 8px;
