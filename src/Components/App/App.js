@@ -1,3 +1,4 @@
+
 import {React, useState} from 'react';
 import './App.css';
 import Login from '../Login/Login'
@@ -7,11 +8,13 @@ import Piechart from '../Piechart/Piechart'
 import MyProfile from '../MyProfile/MyProfile'
 import { Routes , Route } from 'react-router-dom';
 
+
 function App() {
   
   const [token, setToken] = useState('');
 
   return (
+
     <div className="App-main" >
       <NavBar token={token} setToken={setToken}/> 
     
@@ -27,3 +30,4 @@ function App() {
 }
 
 export default App;
+
