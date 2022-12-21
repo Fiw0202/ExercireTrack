@@ -4,6 +4,7 @@ import "./MyProfile.css";
 import { useNavigate } from 'react-router-dom'
 
 export default function ProfilePage({ token }) {
+  
   const navigate = useNavigate()
   const [response, setRes] = useState({});
   const [formValues, setFormValues] = useState({
@@ -25,7 +26,7 @@ export default function ProfilePage({ token }) {
   useEffect(() => {
     getProfileDetail().then((res) => {
       setRes(res);
-      console.log("res", res.data);
+      // console.log("res", res.data);
       if (res.result === "complete") {
         setFormValues({
           ...formValues,
@@ -43,11 +44,15 @@ export default function ProfilePage({ token }) {
     });
   }, []);
 
+
   async function getProfileDetail() {
     const settings = getRequestOption("GET", null, token);
     const url = `${baseUrl}user/`;
     const res = await sendRequest(url, settings);
-    console.log("get profile datares", res);
+    // let dateFormatType = new Date(res.data.DOB)
+    // console.log('dateformat', dateFormatType)
+
+    // console.log("get profile datares", res);
     return res;
   }
 
@@ -58,11 +63,11 @@ export default function ProfilePage({ token }) {
     event.preventDefault();
 
     // Perform form submission logic here, using the formValues state
-    console.log("formValues", formValues, event);
+    // console.log("formValues", formValues, event);
     const url = `${baseUrl}user/profile`;
     const updateOption = getRequestOption("PUT", formValues, token);
     const res = await sendRequest(url, updateOption);
-    console.log("res", res);
+    // console.log("res", res);
   }
 
   // Function to handle input changes
@@ -137,7 +142,7 @@ export default function ProfilePage({ token }) {
             type="date"
             name="DOB"
             id="DOB"
-            value={formValues.DOB}
+            value={formValues.DOB}    
             onChange={handleChange}
             className="profile-input"
           />
