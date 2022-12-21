@@ -1,6 +1,7 @@
-import React from 'react';
+import {React, useEffect} from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
+import { useNavigate } from 'react-router-dom'
 import './Piechart.css';
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -26,7 +27,20 @@ const data = {
 
 };
 
-function Piechart() {
+function Piechart({ token }) {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    // Fetch the token from local storage
+    // const token = localStorage.getItem('token');
+    // If there is no token, redirect the user to the login page
+    if (!token) {
+      alert('Login first!')
+      navigate('/')
+    }
+
+  }, [token]);
+  
     return(
         <div className="chart-data"><Pie data={data} /></div>
     ) ;
