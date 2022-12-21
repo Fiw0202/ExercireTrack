@@ -4,75 +4,11 @@
   margin: 40px;
   text-align: start;
 }
-.activity {
+.activity-times{
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
   margin: 40px;
-  background-color: antiquewhite;
+ justify-content: center;
 }
-.activity-items {
-  text-align: center;
-  font-size: 16px;
-  padding: 10px;
-  margin: 10px;
-  max-width: 250px;
-  width: 100%;
-  background-color: aquamarine;
-  border-radius: 12px;
-  box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
-}
-.activity-items h3 {
-  font-size: 26px;
-  text-shadow: 2px 2px rgba(0, 0, 0, 0.23);
-  font-weight: 900;
-}
-.activity-list {
-  display: flex;
-  justify-content: space-evenly;
-}
-.ul-right {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-.ul-left {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-.activity-items li {
-  list-style-type: none;
-}
-.add-exercise-btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(173, 172, 172);
-    max-width: 250px;
-    width: 250px;
-    border-radius: 12px;
-    margin: 10px;
-    box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
-    transition: 0.3s;
-    cursor: pointer;
-}
-.circle{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(207, 207, 207);
-    width: 125px;
-    height: 125px;
-    border-radius: 50%;
-    border: 2px solid black;
-    box-shadow: 0px 0px 16px 7px rgba(0, 0, 0, 0.1);
-}
-.circle :hover{
-    transform: scale(1.04);
-}
-.circle h2{
-    font-size: 100px;
-}
-.add-exercise-btn:hover{
-    transition: 0.3s;
-    transform: scale(1.04);
-}
+
