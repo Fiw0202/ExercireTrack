@@ -27,7 +27,7 @@ const ActivityCard = (props) => {
             <li>Date</li>
             <li>time </li>
             <li>Number of sets </li>
-            <li>distance() </li>
+            <li>distance </li>
             <li>calories </li>
           </ul>
           <ul className="ul-left">
