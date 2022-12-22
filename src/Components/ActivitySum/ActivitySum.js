@@ -1,6 +1,6 @@
 import "./ActivitySum.css";
 import ActivityCard from './ActivityCard/ActivityCard'
-import Addbtn from './Add-btn/Addbtn'
+{/*import Addbtn from './Add-btn/Addbtn'*/}
 
 const ActivitySum = (props) => {
   
@@ -13,7 +13,7 @@ const{cards} = props
         {cards.map((element) => {
           return <ActivityCard {...element} key={element.id} />;
         })}
-        <Addbtn />
+        {/*<Addbtn />*/}
       </div>
     </div>
   );
