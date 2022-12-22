@@ -24,7 +24,43 @@ function App() {
       distance: " 10 ",
       calories: "2000",
     },
-  ]
+    {
+      id: 2,
+      activity: "Walking",
+      date: "12/12/2565",
+      time: "18.00 น.",
+      sets: 3,
+      distance: " 1 ",
+      calories: "200",
+    },
+    {
+      id: 3,
+      activity: "Bicycling",
+      date: "12/12/2565",
+      time: "12.00 น.",
+      sets: 6,
+      distance: " 10 ",
+      calories: "2000",
+    },
+    {
+      id: 4,
+      activity: "Swimming",
+      date: "12/12/2565",
+      time: "12.00 น.",
+      sets: 6,
+      distance: " 10 ",
+      calories: "2000",
+    },
+    {
+      id: 5,
+      activity: "Hiking",
+      date: "12/12/2565",
+      time: "12.00 น.",
+      sets: 6,
+      distance: " 10 ",
+      calories: "2000",
+    },
+  ];
 
   const [item, setItem] = useState(data);
   const onAddNewActivity = (newActivity) => {
@@ -46,12 +82,12 @@ function App() {
         <Route path="/register" element={<Register />}></Route>
         <Route path="/overview" element={<Piechart token={token}/>}></Route>
         <Route path="/profile" element={<MyProfile token={token}/>}></Route>
-       
-      </Routes>
-      <ActivityContext.Provider value={"ActivityContext"}>
-       <ActivitySum cards={item} />
+        <ActivityContext.Provider value={"ActivityContext"}>
+        <Route path="/activitycard" element={<ActivitySum cards={item} token={token}/>}></Route>
         <NewExercire onAddActivity={onAddNewActivity} />
         </ActivityContext.Provider>
+      
+      </Routes>
     </div>
   );
 }
