@@ -53,8 +53,10 @@ const NewExercire = (props) => {
 
   return (
     <div className="add-exercise">
-      <h1>New Exercire</h1>
+      <h1>Record Exercire</h1>
       <form className="newex-form" onSubmit={saveExercise}>
+        <div className="Exform">
+          <div className="totalform">
         <div className="section-form">
           <p>Activity</p>
           <p>Date</p>
@@ -72,7 +74,7 @@ const NewExercire = (props) => {
             <option value="Swimming">Swimming</option>
             <option value="Hiking">Hiking</option>
           </select>
-          <input type="date" onChange={inputDate} value={date} disabled={!formActivity}></input>
+          <input type="date" onChange={inputDate} value={date} ></input>
           <input
             type="time"
             placeholder="Activity"
@@ -94,9 +96,13 @@ const NewExercire = (props) => {
             onChange={inputCalories} value={calories}
           ></input>
         </div>
+        </div>
+        <div className="btnSum">
         <button type="submit" className="btn-save" title='Save' >
           Save
         </button>
+        </div>
+        </div>
       </form>
     </div>
   );
