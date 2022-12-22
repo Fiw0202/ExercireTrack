@@ -1,18 +1,20 @@
 import "./NewExercire.css";
-import { useState,useEffect } from "react";
+import ActivityContext from "../../Data/ActivityContext";
+import { useState,useContext } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
 //สร้าง Props 
-const NewExercire = (props) => {
+const NewExercire = () => {
   const [activity, setActivity] = useState('');
   const [date, setDate] = useState();
   const [time, setTime] = useState();
-  const [sets, setSets] = useState(0);
-  const [distance, setDistance] = useState(0);
-  const [calories, setCalories] = useState(0);
-  const [formActivity,setformActivity] = useState(false)
+  const [sets, setSets] = useState();
+  const [distance, setDistance] = useState();
+  const [calories, setCalories] = useState();
+
 
   //สร้าง Event
+  const { addActivity } = useContext(ActivityContext)
   const inputActivity = (event) => {
     setActivity(event.target.value);
   };
@@ -31,6 +33,7 @@ const NewExercire = (props) => {
   const inputCalories = (event) => {
     setCalories(event.target.value);
   };
+
   const saveExercise = (event) => {
     event.preventDefault()
     const cardActivity = {
@@ -42,19 +45,20 @@ const NewExercire = (props) => {
       distance: Number(distance),
       calories: Number(calories),
     };
-    props.onAddActivity(cardActivity)
+    addActivity(cardActivity)
     setActivity('')
     setDate()
     setTime()
-    setSets(0)
-    setDistance(0)
-    setCalories(0)
+    setSets()
+    setDistance()
+    setCalories()
   };
 
   return (
     <div className="add-exercise">
       <h1>New Exercire</h1>
       <form className="newex-form" onSubmit={saveExercise}>
+        <div className="formEx">
         <div className="section-form">
           <p>Activity</p>
           <p>Date</p>
@@ -72,7 +76,7 @@ const NewExercire = (props) => {
             <option value="Swimming">Swimming</option>
             <option value="Hiking">Hiking</option>
           </select>
-          <input type="date" onChange={inputDate} value={date} disabled={!formActivity}></input>
+          <input type="date" onChange={inputDate} value={date} ></input>
           <input
             type="time"
             placeholder="Activity"
@@ -94,9 +98,12 @@ const NewExercire = (props) => {
             onChange={inputCalories} value={calories}
           ></input>
         </div>
+        </div>
+        <div className="submit-btn">
         <button type="submit" className="btn-save" title='Save' >
           Save
         </button>
+        </div>
       </form>
     </div>
   );
